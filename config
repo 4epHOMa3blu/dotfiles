@@ -14,10 +14,10 @@ set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend
 
-client.focused #003eb0 #003eb0 #fdf6e3 #003eb0
-client.focused_inactive #073642 #073642 #eee8d5 #003eb0
-client.unfocused #073642 #073642 #93a1a1 #586e75
-client.urgent #960000 #960000 #ff9694 #ff524f
+client.focused 				#003eb0 #003eb0 #fdf6e3 #003eb0
+client.focused_inactive 	#073642 #073642 #eee8d5 #003eb0
+client.unfocused #073642 	#073642 #93a1a1 #586e75
+client.urgent 				#960000 #960000 #ff9694 #ff524f
 
 exec_always feh --bg-scale /home/user/Загрузки/Wallpapers/wallpaper\ 30.jpg
 exec_always "setxkbmap -model pc105 -layout us,ru  -option grp:alt_shift_toggle"
