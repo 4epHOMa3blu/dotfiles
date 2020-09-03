@@ -1,6 +1,4 @@
-# .config
-
-## i3
+# i3
 Refresh servers before getting started
 ```bash
 sudo pacman -Syy
@@ -23,7 +21,7 @@ When **i3: first configuration** window will be shown
 
 [More useful information](https://i3wm.org/docs/userguide.html)
 
-## polybar
+# polybar
 Install polybar
 ```bash
 sudo pacman -S polybar
@@ -52,4 +50,3 @@ bar {
 }
 ```
 [More useful information](https://github.com/polybar/polybar/wiki)
-
