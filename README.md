@@ -30,3 +30,5 @@ bar {
     i3bar_command i3bar
 }
 ```
+[More useful info](https://github.com/polybar/polybar/wiki)
+
