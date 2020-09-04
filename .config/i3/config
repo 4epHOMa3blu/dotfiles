@@ -9,10 +9,10 @@ set $inner_gaps 12
 set $outer_gaps 12
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
-set $shutdown sudo -A shutdown -h now
-set $reboot sudo -A reboot
+set $shutdown shutdown -h now
+set $reboot reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $hibernate sudo -A systemctl suspend
+set $hibernate systemctl suspend
 
 client.focused              #003eb0 #003eb0 #fdf6e3 #003eb0
 client.focused_inactive     #073642 #073642 #eee8d5 #003eb0
@@ -69,14 +69,13 @@ bindsym $mod+space		                focus mode_toggle
 bindsym $mod+Shift+space 	            floating toggle
 
 bindsym $mod+Escape		                workspace prev
-bindsym $mod+Shift+Escape               exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+Escape               exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+grave                      workspace next
 # bindsym $mod+Shift+grave
 
 # bindsym $mod+BackSpace
-bindsym $mod+Shift+BackSpace	        exec --no-startup-id prompt "Reboot computer?" "$reboot"
-
+bindsym $mod+Shift+BackSpace	        exec "i3-nagbar -t warning -m 'Reboot computer?' -b 'Yes, reboot' '$reboot' 'i3-msg exit'"
 
 # #---Letter Key Bindings---# #
 bindsym $mod+q                          kill
@@ -109,13 +108,13 @@ bindsym $mod+Shift+o		            exec --no-startup-id i3resize right
 # bindsym $mod+p
 # bindsym $mod+Shift+p
 
-# bindsym $mod+a
+bindsym $mod+a                          exec --no-startup-id telegram-desktop
 # bindsym $mod+Shift+a
 
 bindsym $mod+s			                gaps inner current plus 5
 bindsym $mod+Shift+s		            gaps inner current minus 5
 
-bindsym $mod+d			                exec --no-startup-id dmenu_run
+bindsym $mod+d                          exec dmenu_run -b -nb '#0b1538' -sb '#1214a3' -sf '#dfdfdf' -fn 'pango:Inconsolata 10'
 bindsym $mod+Shift+d		            gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f			                fullscreen toggle
@@ -140,7 +139,7 @@ bindsym $mod+z			                gaps outer current plus 5
 bindsym $mod+Shift+z		            gaps outer current minus 5
 
 # bindsym $mod+x
-bindsym $mod+Shift+x		            exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
+bindsym $mod+Shift+x		            exec "i3-nagbar -t warning -m 'Shutdown computer?' -b 'Yes, shutdown' '$shutdown' 'i3-msg exit'"
 
 bindsym $mod+c                          exec chromium
 # bindsym $mod+Shift+c
@@ -237,7 +236,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 
 # #---Extra XF86 Keys---# #
-bindsym --release Print exec "scrot -m'/home/user/Pictures/screenshots/%H:%M:%S.jpg'"
+bindsym Print exec scrot /home/user/Изображения/Screenshots/%H:%M:%S.jpg
 bindsym XF86MonBrightnessUp exec "light -A 5
 bindsym XF86MonBrightnessDown exec "light -U 5
-
