@@ -159,11 +159,11 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #d79921
-label-connected = %essid%
+label-connected = %essid% %downspeed%
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = 睊no wifi
+label-disconnected = ⚠ no wifi
 label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
@@ -204,8 +204,7 @@ animation-charging-framerate = 500
 type = internal/date
 interval = 5
 
-date =
-date-alt = "%d %b %Y (%a)"
+date-alt = " %d %b %Y (%a)"
 
 time = %H:%M
 time-alt = %H:%M:%S
