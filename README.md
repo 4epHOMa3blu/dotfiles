@@ -17,7 +17,7 @@ Reboot your machine or run ```startx``` command in your terminal to change windo
 
 When **i3: first configuration** window will be shown
 1. Hit _Enter_ to generate your own config
-2. Choose _Win_ key as a defiult modifier
+2. Choose _Win_ key as a default modifier
 
 [More useful information](https://i3wm.org/docs/userguide.html)
 
