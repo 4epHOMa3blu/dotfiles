@@ -16,18 +16,18 @@ foreground = #dfdfdf
 foreground-alt = #555
 alert = #bd2c40
 
-darkred = #cc241d
+darkred = #a82305
 red = #ed0e0e
 darkyellow = #d79921
 yellow = #f2f222
 darkgreen = #98971a
 green = #43f00a
-darkblue = #458588
-blue = #201ac7
+darkazure = #148280
+azure = #15d4d0
+darkblue = #195fa6
+blue = #0d86ff
 darkmagenta = #b16286
 magenta = #e600e6
-darkcyan = #689d6a
-cyan = #00e5e5
 
 white = #ebdbb2
 black = #1d2021
@@ -60,7 +60,7 @@ font-3 = Symbola:pixelsize=9;1
 
 modules-left = i3
 ;modules-center = mpd
-modules-right = pulseaudio backlight xkeyboard memory wlan battery date powermenu
+modules-right = pulseaudio backlight xkeyboard temperature memory wlan battery date powermenu
 
 tray-position = right
 tray-padding = 0
@@ -162,10 +162,26 @@ format-prefix-underline = ${self.label-layout-underline}
 label-layout = %layout%
 label-layout-underline = ${colors.darkred}
 
+[module/temperature]
+type = internal/temperature
+hwmon-path = /sys/devices/pci0000:00/0000:00:01.3/0000:01:00.0/hwmon/hwmon0/temp1_input
+format = <label>
+format-warn = <label-warn>
+
+base-temperature = 20
+warn-temperature = 50
+
+label = %temperature-c%
+label-underline = ${colors.darkyellow}
+
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.darkred}
+label-warn-underline = ${colors.darkred}
+
 [module/memory]
 type = internal/memory
 label = RAM %gb_used%/%gb_total%
-label-underline = ${colors.darkyellow}
+label-underline = ${colors.darkgreen}
 
 [module/wlan]
 type = internal/network
@@ -173,7 +189,7 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.darkgreen}
+format-connected-underline = ${colors.darkazure}
 label-connected = %essid% %downspeed%
 
 format-disconnected = <label-disconnected>
