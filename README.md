@@ -61,3 +61,4 @@ Add this to your .xinitrc file
 ```bash
 dunst > /dev/null 2>&1 &
 ```
+[More useful information](https://wiki.archlinux.org/index.php/Dunst)
