@@ -50,3 +50,14 @@ bar {
 }
 ```
 [More useful information](https://github.com/polybar/polybar/wiki)
+
+# dunst
+Install dunst
+```bash
+sudo pacman -S dunst
+```
+
+Add this to your .xinitrc file
+```bash
+dunst > /dev/null 2>&1 &
+```
