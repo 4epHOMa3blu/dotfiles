@@ -14,15 +14,23 @@ set $reboot reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate systemctl suspend
 
+# #--- System colors ---# #
 client.focused              #003eb0 #003eb0 #fdf6e3 #003eb0
 client.focused_inactive     #073642 #073642 #eee8d5 #003eb0
 client.unfocused            #073642 #073642 #93a1a1 #586e75
 client.urgent               #960000 #960000 #ff9694 #ff524f
 
+# #--- Wallpaper setting ---# #
 exec_always feh --bg-scale /home/user/Загрузки/Wallpapers/wallpaper\ 30.jpg
-exec_always "setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle grp:alt_shift_toggle"
-exec_always --no-startup-id ~/.config/i3/scripts/i3-battery-popup
-font pango:DejaVu Sans Mono 8
+
+# #--- Keyboard layouts ---# #
+exec_always "setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle"
+
+# #--- Battery popup ---# #
+exec_always --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
+
+# #--- Font setting ---# #
+font pango:Fira Code Light Nerd Font Complete 8
 
 
 # #---Gaps---# #
@@ -70,13 +78,13 @@ bindsym $mod+space		                focus mode_toggle
 bindsym $mod+Shift+space 	            floating toggle
 
 bindsym $mod+Escape		                workspace prev
-bindsym $mod+Shift+Escape               exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+Escape               exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+grave                      workspace next
 # bindsym $mod+Shift+grave
 
 # bindsym $mod+BackSpace
-bindsym $mod+Shift+BackSpace	        exec "i3-nagbar -t warning -m 'Reboot computer?' -b 'Yes, reboot' '$reboot' 'i3-msg exit'"
+bindsym $mod+Shift+BackSpace	        exec "i3-nagbar -t warning -m 'Reboot computer?' -B 'Yes, reboot' '$reboot' 'i3-msg exit'"
 
 # #---Letter Key Bindings---# #
 bindsym $mod+q                          kill
@@ -88,29 +96,28 @@ bindsym $mod+Shift+w		            exec $term -e nmtui
 # bindsym $mod+e
 bindsym $mod+Shift+e                    reload
 
-# bindsym $mod+r                        exec --no-startup-id winresize
 bindsym $mod+Shift+r                    restart
 
 bindsym $mod+t			                split toggle
 bindsym $mod+Shift+t		            gaps inner current set $inner_gaps; gaps outer current set $outer_gaps
 
 bindsym $mod+y		                	exec $term -e calcurse
-bindsym $mod+Shift+y                    exec --no-startup-id i3resize left
+# bindsym $mod+Shift+y                  exec --no-startup-id i3resize left
 
 # bindsym $mod+u
-bindsym $mod+Shift+u                    exec --no-startup-id i3resize down
+# bindsym $mod+Shift+u                  exec --no-startup-id i3resize down
 
 bindsym $mod+i 			                exec $term -e htop
-bindsym $mod+Shift+i                    exec --no-startup-id i3resize up
+bindsym $mod+Shift+i                  resize shrink height 15 px or 15 ppt
 
 bindsym $mod+o			                sticky toggle
-bindsym $mod+Shift+o		            exec --no-startup-id i3resize right
+# bindsym $mod+Shift+o		            exec --no-startup-id i3resize right
 
 # bindsym $mod+p
 # bindsym $mod+Shift+p
 
 bindsym $mod+a                          exec --no-startup-id telegram-desktop
-# bindsym $mod+Shift+a
+bindsym $mod+Shift+a                    exec --no-startup-id spotify
 
 bindsym $mod+s			                gaps inner current plus 5
 bindsym $mod+Shift+s		            gaps inner current minus 5
@@ -139,10 +146,10 @@ bindsym $mod+Shift+l		            move right
 bindsym $mod+z			                gaps outer current plus 5
 bindsym $mod+Shift+z		            gaps outer current minus 5
 
-# bindsym $mod+x
-bindsym $mod+Shift+x		            exec "i3-nagbar -t warning -m 'Shutdown computer?' -b 'Yes, shutdown' '$shutdown' 'i3-msg exit'"
+bindsym $mod+x 		                    exec "i3-nagbar -t warning -m 'Suspend computer?' -B 'Yes, suspend' '$hibernate' 'i3-msg exit'"
+bindsym $mod+Shift+x		            exec "i3-nagbar -t warning -m 'Shutdown computer?' -B 'Yes, shutdown' '$shutdown' 'i3-msg exit'"
 
-bindsym $mod+c                          exec chromium
+# bindsym $mod+c                        exec chromium
 # bindsym $mod+Shift+c
 
 bindsym $mod+v			                exec --no-startup-id $term -e $EDITOR
@@ -156,6 +163,18 @@ bindsym $mod+v			                exec --no-startup-id $term -e $EDITOR
 
 # bindsym $mod+m
 # bindsym $mod+Shift+m
+
+# resize floating windows
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 
 # #---Workspace Bindings---# #
