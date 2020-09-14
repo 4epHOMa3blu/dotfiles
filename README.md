@@ -61,4 +61,10 @@ Add this to your .xinitrc file
 ```bash
 dunst > /dev/null 2>&1 &
 ```
+
+Add this to your i3 config to get battery popups
+```bash
+exec_always --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
+```
+
 [More useful information](https://wiki.archlinux.org/index.php/Dunst)
