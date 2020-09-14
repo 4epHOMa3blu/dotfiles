@@ -80,4 +80,4 @@ exec_always --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
 ```
 
 [More useful information about dunst](https://wiki.archlinux.org/index.php/Dunst)
-[More useful information about i3-battery-popup](https://github.com/rjekker/i3-battery-popup)
+and [i3-battery-popup](https://github.com/rjekker/i3-battery-popup)
