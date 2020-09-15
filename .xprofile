@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# This file runs when a DM logs you into a graphical session.
+
+# xcompmgr for transparency
+xcompmgr -cCfF -r7 -o 0.7 -l-10 -t-8 -D3 -I 0.020 -O 0.020 &
+
+# dunst for notifications
+dunst &
+
+# light for backlight
+exec light -S 30 &
