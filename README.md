@@ -29,7 +29,7 @@ sudo pacman -S polybar
 
 Default polybar config
 ```bash
-sudo cp /usr/share/doc/polybar/config ~/.config/polybar/
+sudo cp /usr/share/doc/polybar/config ~/.config/polybar/config
 sudo chown usernmae:username .config/polybar/config
 ```
 
@@ -57,11 +57,13 @@ Install dunst
 sudo pacman -S dunst
 ```
 
-Add this to your .xinitrc
+Default dunst config
 ```bash
-dunst > /dev/null 2>&1 &
+sudo cp /usr/share/dunst/dunstrc ~/.config/dunst/dunstrc
+sudo chown usernmae:username .config/dunst/dunstrc
 ```
-And also this to your .xprofile
+
+Add this to your .xprofile
 ```bash 
 dunst &
 ```
