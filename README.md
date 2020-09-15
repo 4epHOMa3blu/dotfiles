@@ -68,6 +68,8 @@ Add this to your .xprofile
 dunst &
 ```
 
+[More useful information about dunst](https://wiki.archlinux.org/index.php/Dunst)
+
 ## i3-battery-popup
 Clone i3-battery-popup package
 ```bash
@@ -85,5 +87,6 @@ Add this to your i3 config to get battery popups
 exec_always --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
 ```
 
-[More useful information about dunst](https://wiki.archlinux.org/index.php/Dunst)
-and [i3-battery-popup](https://github.com/rjekker/i3-battery-popup)
+
+
+[More useful information about i3-battery-popup](https://github.com/rjekker/i3-battery-popup)
