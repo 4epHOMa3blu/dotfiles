@@ -57,9 +57,13 @@ Install dunst
 sudo pacman -S dunst
 ```
 
-Add this to your .xinitrc file
+Add this to your .xinitrc
 ```bash
 dunst > /dev/null 2>&1 &
+```
+And also this to your .xprofile
+```bash 
+dunst &
 ```
 
 ## i3-battery-popup
