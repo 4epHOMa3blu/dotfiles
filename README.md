@@ -30,7 +30,7 @@ sudo pacman -S polybar
 Default polybar config
 ```bash
 sudo cp /usr/share/doc/polybar/config ~/.config/polybar/config
-sudo chown usernmae:username .config/polybar/config
+sudo chown username:username .config/polybar/config
 ```
 
 Change the access permission for launch.sh
@@ -60,7 +60,7 @@ sudo pacman -S dunst
 Default dunst config
 ```bash
 sudo cp /usr/share/dunst/dunstrc ~/.config/dunst/dunstrc
-sudo chown usernmae:username .config/dunst/dunstrc
+sudo chown username:username .config/dunst/dunstrc
 ```
 
 Add this to your .xprofile
