@@ -84,9 +84,15 @@ makepkg -si
 
 Add this to your i3 config to get battery popups
 ```bash
-exec_always --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
+exec --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
 ```
 
-
-
 [More useful information about i3-battery-popup](https://github.com/rjekker/i3-battery-popup)
+
+## Dotfiles
+# .Xresources
+Add a file named ```.Xresources``` to your $HOME directory
+Make sure that you have this line in your .xinitrc file
+```bash
+userresources=$HOME/.Xresources
+```
