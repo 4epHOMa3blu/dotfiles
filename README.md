@@ -88,7 +88,7 @@ exec --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
 # Dotfiles
 ## .Xresources
 Add a file named ```.Xresources``` to your **$HOME** directory\
-Make sure that you have this line in your .xinitrc file\
+Make sure that you have this line in your .xinitrc file
 ```bash
 userresources=$HOME/.Xresources
 ```
@@ -97,7 +97,7 @@ userresources=$HOME/.Xresources
 
 ## .xprofile
 Add a file named ```.xprofile``` to your **$HOME** directory\
-Don't forget to put a **&** sign at the end of each command line\
+Don't forget to put a **&** sign at the end of each command line
 
 Line example:
 ```bash
