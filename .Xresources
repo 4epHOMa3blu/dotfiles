@@ -1,0 +1,61 @@
+!* Gruvbox
+#define G_background    #0b1538
+#define G_foreground    #dfdfdf
+
+#define G_dark0         #282828
+#define G_dark1         #212020
+
+#define G_light0        #fdf4c1
+#define G_light1        #ebdbb2
+
+#define G_red0          #ed0e0e
+#define G_yellow0       #fabd2f
+#define G_green0        #b8bb26
+#define G_cyan0         #8ec07c
+#define G_blue0         #003eb0
+#define G_magenta0      #d3869b
+
+#define G_red1          #f0190a
+#define G_yellow1       #d79921
+#define G_green1        #98971a
+#define G_cyan1         #148280
+#define G_blue1         #195fa6
+#define G_magenta1      #b16286
+
+*.background: G_background
+*.foreground: G_foreground
+*.cursorColor: G_light0
+*.fading: 40
+*.fadeColor: G_dark0
+
+! Black
+*.color0: G_dark0
+*.color8: G_dark1
+
+! Red
+*.color1: G_red0
+*.color9: G_red1
+
+! Yellow
+*.color2: G_yellow0
+*.color10: G_yellow1
+
+! Green
+*.color3: G_green0
+*.color11: G_green1
+
+! Cyan
+*.color4: G_cyan0
+*.color12: G_cyan1
+
+! Blue
+*.color5: G_blue0
+*.color13: G_blue1
+
+! Magenta
+*.color6: G_magenta0
+*.color14: G_magenta1
+
+! White
+*.color7: G_light0
+*.color15: G_light1
