@@ -92,15 +92,16 @@ Make sure that you have this line in your .xinitrc file\
 ```bash
 userresources=$HOME/.Xresources
 ```
+
 [More useful information about .Xresources](https://wiki.debian.org/Xresources)
 
 ## .xprofile
 Add a file named ```.xprofile``` to your **$HOME** directory\
-This file runs when a DM logs you into a graphical session\
-There you can define commands that should be run right from the start of a new session\
-For example:
+Don't forget to put a **&** sign at the end of each command line\
+
+Line example:
 ```bash
 dunst &
 ```
-Don't forget to put a **&** sign at the end of each command line\
+
 [More useful information about .xprofile](https://wiki.archlinux.org/index.php/Xprofile)
