@@ -11,7 +11,7 @@
 
 
 !* Gruvbox
-#define G_background    #0b1538
+#define G_background    #bb303030
 #define G_foreground    #dfdfdf
 
 #define G_white         #fdf4c1
