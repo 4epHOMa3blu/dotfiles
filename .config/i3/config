@@ -1,5 +1,6 @@
 # vim: filetype=i3
 
+
 # This config file will use environmental variables such as $BROWSER and $TERMINAL.
 # You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:
 
@@ -9,31 +10,46 @@ set $inner_gaps 12
 set $outer_gaps 12
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
+set $hibernate systemctl suspend
 set $shutdown shutdown -h now
 set $reboot reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $hibernate systemctl suspend
+set $wallpaper_path /home/user/Downloads/Wallpapers/8_bit_city.jpg
 
-# #--- System colors ---# #
-client.focused              #003eb0 #003eb0 #fdf6e3 #003eb0
-client.focused_inactive     #073642 #073642 #eee8d5 #003eb0
-client.unfocused            #073642 #073642 #93a1a1 #586e75
-client.urgent               #960000 #960000 #ff9694 #ff524f
+# Colors
+set_from_resource $bg background
+set_from_resource $fg foreground
 
-# #--- Wallpaper setting ---# #
-exec_always feh --bg-scale /home/user/Загрузки/Wallpapers/wallpaper\ 30.jpg
+set_from_resource $white color0
+set_from_resource $red color1
+set_from_resource $yellow color2
+set_from_resource $green color3
+set_from_resource $cyan color4
+set_from_resource $blue color5
+set_from_resource $magenta color6
+set_from_resource $gray color7
+set_from_resource $black color8
+
+# System colors
+# class                     border    bcgr    text      indicator
+client.focused              $yellow   $yellow $yellow   $yellow
+client.focused_inactive     $yellow   $yellow $yellow   $yellow
+client.unfocused            $gray     $gray   $gray     $yellow
+client.urgent               $red      $red    $red      $yellow
+
+# Wallpaper setting
+exec_always feh --bg-scale $wallpaper_path
 
 # #--- Keyboard layouts ---# #
 exec_always "setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle"
 
-# #--- Battery popup ---# #
-exec_always --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
+# Battery popup
+exec --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
 
-# #--- Font setting ---# #
+# Font setting
 font pango:Fira Code Light Nerd Font Complete 8
 
-
-# #---Gaps---# #
+# Gaps
 for_window [class="^.*"] border pixel 1
 gaps inner $inner_gaps
 gaps outer $outer_gaps
@@ -59,20 +75,21 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 	#modifier None
 
     #colors {
-        #separator #268bd2
-        #background #919191
-        #statusline #839496
-        #focused_workspace #fdf6e3 #003eb0 #fdf6e3
-        #active_workspace #fdf6e3 #003eb0 #fdf6e3
-        #inactive_workspace #002b36 #586e75 #002b36
-        #urgent_workspace #960000 #960000 #fdf6e3
+        #separator              #268bd2
+        #background             #919191
+        #statusline             #839496
+        #focused_workspace      #fdf6e3 #003eb0 #fdf6e3
+        #active_workspace       #fdf6e3 #003eb0 #fdf6e3
+        #inactive_workspace     #002b36 #586e75 #002b36
+        #urgent_workspace       #960000 #960000 #fdf6e3
             #}
     #}
 
 
 # #---Basic Bindings---# #
 bindsym $mod+Return                     exec $term
-bindsym $mod+Shift+Return               exec $term -e 'ranger'
+bindsym $mod+Shift+Return               exec --no-startup-id alacritty -t 'alacritty-floating'
+                                        for_window [title="^alacritty-floating$"] floating enable, move position center
 
 bindsym $mod+space		                focus mode_toggle
 bindsym $mod+Shift+space 	            floating toggle
@@ -84,7 +101,7 @@ bindsym $mod+grave                      workspace next
 # bindsym $mod+Shift+grave
 
 # bindsym $mod+BackSpace
-bindsym $mod+Shift+BackSpace	        exec "i3-nagbar -t warning -m 'Reboot computer?' -B 'Yes, reboot' '$reboot' 'i3-msg exit'"
+bindsym $mod+Shift+BackSpace	        exec $reboot
 
 # #---Letter Key Bindings---# #
 bindsym $mod+q                          kill
@@ -96,22 +113,23 @@ bindsym $mod+Shift+w		            exec $term -e nmtui
 # bindsym $mod+e
 bindsym $mod+Shift+e                    reload
 
+bindsym $mod+r                          exec rofi -show run
 bindsym $mod+Shift+r                    restart
 
 bindsym $mod+t			                split toggle
 bindsym $mod+Shift+t		            gaps inner current set $inner_gaps; gaps outer current set $outer_gaps
 
 bindsym $mod+y		                	exec $term -e calcurse
-# bindsym $mod+Shift+y                  exec --no-startup-id i3resize left
+# bindsym $mod+Shift+y
 
 # bindsym $mod+u
-# bindsym $mod+Shift+u                  exec --no-startup-id i3resize down
+# bindsym $mod+Shift+u
 
 bindsym $mod+i 			                exec $term -e htop
-bindsym $mod+Shift+i                  resize shrink height 15 px or 15 ppt
+# bindsym $mod+Shift+i
 
 bindsym $mod+o			                sticky toggle
-# bindsym $mod+Shift+o		            exec --no-startup-id i3resize right
+# bindsym $mod+Shift+o
 
 # bindsym $mod+p
 # bindsym $mod+Shift+p
@@ -122,7 +140,7 @@ bindsym $mod+Shift+a                    exec --no-startup-id spotify
 bindsym $mod+s			                gaps inner current plus 5
 bindsym $mod+Shift+s		            gaps inner current minus 5
 
-bindsym $mod+d                          exec dmenu_run -b -nb '#0b1538' -sb '#1214a3' -sf '#dfdfdf' -fn 'pango:Inconsolata 10'
+bindsym $mod+d                          exec dmenu_run -b -nb '$black' -sb '$yellow' -nf '$white' -sf '$white' -fn 'pango:Inconsolata 16'
 bindsym $mod+Shift+d		            gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f			                fullscreen toggle
@@ -146,10 +164,10 @@ bindsym $mod+Shift+l		            move right
 bindsym $mod+z			                gaps outer current plus 5
 bindsym $mod+Shift+z		            gaps outer current minus 5
 
-bindsym $mod+x 		                    exec "i3-nagbar -t warning -m 'Suspend computer?' -B 'Yes, suspend' '$hibernate' 'i3-msg exit'"
-bindsym $mod+Shift+x		            exec "i3-nagbar -t warning -m 'Shutdown computer?' -B 'Yes, shutdown' '$shutdown' 'i3-msg exit'"
+bindsym $mod+x 		                    exec $hibernate
+bindsym $mod+Shift+x		            exec $shutdown
 
-# bindsym $mod+c                        exec chromium
+# bindsym $mod+c
 # bindsym $mod+Shift+c
 
 bindsym $mod+v			                exec --no-startup-id $term -e $EDITOR
@@ -161,26 +179,14 @@ bindsym $mod+v			                exec --no-startup-id $term -e $EDITOR
 # bindsym $mod+n
 # bindsym $mod+Shift+n
 
-# bindsym $mod+m
-# bindsym $mod+Shift+m
-
-# resize floating windows
-bindsym $mod+r mode "resize"
-mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+bindsym $mod+m                          exec $term -e "nnn"
+bindsym $mod+Shift+m                    exec $term -e "ranger"
 
 
 # #---Workspace Bindings---# #
 bindsym $mod+Tab		                workspace back_and_forth
-bindsym $mod+semicolon		            split vertical
-bindsym $mod+apostrophe		            split horizontal
+# bindsym $mod+semicolon
+# bindsym $mod+apostrophe
 # bindsym $mod+slash
 # bindsym $mod+backslash
 
@@ -256,7 +262,7 @@ bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT
 
 
 # #---Extra XF86 Keys---# #
-bindsym Print       exec flameshot full -p ~/Изображения/Screenshots/
+bindsym Print       exec flameshot full -p ~/Pictures/Screenshots/
 bindsym Shift+Print exec flameshot gui
 bindsym XF86MonBrightnessUp   exec "light -A 5
 bindsym XF86MonBrightnessDown exec "light -U 5
