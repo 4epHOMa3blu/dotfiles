@@ -9,4 +9,10 @@ xcompmgr -cCfF -r7 -o 0.7 -l-10 -t-8 -D3 -I 0.020 -O 0.020 &
 dunst &
 
 # light for backlight
-exec light -S 30 &
+light -S 30 &
+
+# battery popups
+i3-battery-popup -n -l 20 -t 60s &
+
+# redshift
+redshift &
