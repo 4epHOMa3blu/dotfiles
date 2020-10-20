@@ -58,6 +58,18 @@ ranger --copy-config=all
 [More useful information about ranger](https://wiki.archlinux.org/index.php/ranger)\
 [Official User Guide](https://github.com/ranger/ranger/wiki/Official-user-guide)
 
+# alacritty
+Install alacritty
+```bash
+sudo pacman -S alacritty
+```
+Default alacritty config
+```bash
+sudo cp /usr/share/doc/alacritty/example/alacritty.yml ~/.config/alacritty/alacritty.yml
+sudo chown username:username .config/alacritty/alacritty.yml
+```
+[More useful information about alacritty](https://wiki.archlinux.org/index.php/Alacritty)
+
 # dunst
 Install dunst
 ```bash
