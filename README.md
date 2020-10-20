@@ -79,9 +79,17 @@ Install redsshift
 ```bash
 sudo pacman -S redshift
 ```
-Create a redshift.conf file in ```/.config/redshift/``` directory\
-Paste there a [default configuration](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample) and set it manually\
+Create a redshift.conf file in ```/.config/redshift/``` directory
+
+Paste there a [default configuration](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample) and set it manually
+
+Add this to your .xprofile
+```bash
+redshift &
+```
+
 [More useful information about redshift](https://wiki.archlinux.org/index.php/redshift)
+
 # dunst
 Install dunst
 ```bash
