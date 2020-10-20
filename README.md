@@ -38,6 +38,7 @@ bar {
     i3bar_command i3bar
 }
 ```
+My current polybar appearance\
 ![polybar](https://user-images.githubusercontent.com/64749230/96635841-16131880-1325-11eb-8bcc-2b3a8f9db4c9.png)
 [More useful information about polybar](https://github.com/polybar/polybar/wiki)
 
@@ -100,6 +101,8 @@ Add this to your .xinitrc file to get battery popups
 ```bash
 exec --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
 ```
+Popup appearance\
+![popup](https://user-images.githubusercontent.com/64749230/96638246-7e172e00-1328-11eb-91a7-0a572bc492df.png)
 [More useful information about i3-battery-popup](https://github.com/rjekker/i3-battery-popup)
 
 # Dotfiles
