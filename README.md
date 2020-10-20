@@ -38,7 +38,7 @@ bar {
     i3bar_command i3bar
 }
 ```
-My current polybar appearance\
+My current ```polybar``` appearance\
 ![polybar](https://user-images.githubusercontent.com/64749230/96635841-16131880-1325-11eb-8bcc-2b3a8f9db4c9.png)
 [More useful information about polybar](https://github.com/polybar/polybar/wiki)
 
@@ -56,6 +56,8 @@ ranger --copy-config=all
 * ```rc.conf``` is used for setting various options and binding the keys to functions
 * ```rifle.conf``` decides which program to use for opening which file
 * ```scope.sh``` is a shell script used to generate the previews for various file types\
+My current ```ranger``` appearance\
+![ranger](https://user-images.githubusercontent.com/64749230/96640320-a94f4c80-132b-11eb-82d5-2a0e86e6b714.png)\
 [More useful information about ranger](https://wiki.archlinux.org/index.php/ranger)\
 [Official User Guide](https://github.com/ranger/ranger/wiki/Official-user-guide)
 
@@ -101,8 +103,8 @@ Add this to your .xinitrc file to get battery popups
 ```bash
 exec --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
 ```
-Popup appearance\
-![popup](https://user-images.githubusercontent.com/64749230/96638246-7e172e00-1328-11eb-91a7-0a572bc492df.png)
+```i3-battery-popup``` appearance\
+![popup](https://user-images.githubusercontent.com/64749230/96638246-7e172e00-1328-11eb-91a7-0a572bc492df.png)\
 [More useful information about i3-battery-popup](https://github.com/rjekker/i3-battery-popup)
 
 # Dotfiles
