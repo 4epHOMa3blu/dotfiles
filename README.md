@@ -38,6 +38,8 @@ bar {
     i3bar_command i3bar
 }
 ```
+My current polybar appearance
+![github-small](https://github.com/4epHOMa3blu/dotfiles/issues/1#issue-725888464)
 [More useful information about polybar](https://github.com/polybar/polybar/wiki)
 
 # ranger
