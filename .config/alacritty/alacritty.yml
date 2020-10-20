@@ -1,0 +1,48 @@
+# Colors (Gruvbox)
+colors:
+  # Default colors
+  primary:
+    background: '#282828'
+    foreground: '#e6e6e6'
+
+  # Normal colors
+  normal:
+    white:   '#fbf1c7'
+    red:     '#eb4949'
+    yellow:  '#d79921'
+    green:   '#9ebf4b'
+    cyan:    '#148280'
+    blue:    '#195fa6'
+    magenta: '#d3869b'
+    black:   '#171717'
+
+  # Bright colors
+  bright:
+    white:   '#fbf1c7'
+    red:     '#fb4934'
+    yellow:  '#fabd2f'
+    green:   '#b8bb26'
+    cyan:    '#53c2db'
+    blue:    '#5576d9'
+    magenta: '#b16286'
+    black:   '#948981'
+
+font:
+  size: 10
+
+  normal:
+    family: Noto Mono
+    style: Regular
+
+  bold:
+    family: Noto Mono
+
+  italic:
+    family: Noto Mono
+
+# key_bindings
+key_bindings:
+    - { key: K, mods: Control, action: ScrollLineUp }
+    - { key: J, mods: Control, action: ScrollLineDown }
+
+background_opacity: 0.85
