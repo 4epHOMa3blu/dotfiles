@@ -116,8 +116,8 @@ dunst &
 ```bash
 git clone https://aur.archlinux.org/i3-battery-popup-git.git
 ```
-2. Then change your current working directory to ```i3-battery-popup-git```
-3. And run this
+2. Change your current working directory to ```i3-battery-popup-git```
+3. Run this command
 ```bash
 makepkg -si
 ```
@@ -143,6 +143,6 @@ userresources=$HOME/.Xresources
 ## .xprofile
 1. Add a file named ```.xprofile``` to your **$HOME** directory
 
-2. Don't forget to put a **&** sign at the end of each command line\
+2. Don't forget to put a **&** sign at the end of each command line
 
 [More useful information about .xprofile](https://wiki.archlinux.org/index.php/Xprofile)
