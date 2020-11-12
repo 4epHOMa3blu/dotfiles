@@ -29,7 +29,7 @@ sudo chown username:username .config/polybar/config
 ```bash
 chmod +x ~/.config/polybar/launch.sh
 ```
-4. Check if you've addded this to your i3 config file
+4. Check if you've added this to your i3 config file
 ```bash
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 ```
@@ -39,9 +39,12 @@ bar {
     i3bar_command i3bar
 }
 ```
-#### My current polybar appearance
-![polybar](https://user-images.githubusercontent.com/64749230/96635841-16131880-1325-11eb-8bcc-2b3a8f9db4c9.png)
-
+6. To add custom fonts to your polybar:
+⋅⋅* Place a folder with .otf-s and/or .ttf-s in ```/usr/share/fonts/``` directory
+⋅⋅* Then place a string like this to your polybar config
+```bash
+font-1 = FontAwesome5Free:style=Solid:pixelsize=11:antialias=true;1
+```
 [More useful information about polybar](https://github.com/polybar/polybar/wiki)
 
 # ranger
@@ -58,10 +61,6 @@ ranger --copy-config=all
 * ```rc.conf``` is used for setting various options and binding the keys to functions
 * ```rifle.conf``` decides which program to use for opening which file
 * ```scope.sh``` is a shell script used to generate the previews for various file types
-
-#### My current ranger appearance
-![ranger](https://user-images.githubusercontent.com/64749230/96640320-a94f4c80-132b-11eb-82d5-2a0e86e6b714.png)
-
 [More useful information about ranger](https://wiki.archlinux.org/index.php/ranger)\
 [Official User Guide](https://github.com/ranger/ranger/wiki/Official-user-guide)
 
