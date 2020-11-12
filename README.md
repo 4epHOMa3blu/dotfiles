@@ -40,8 +40,8 @@ bar {
 }
 ```
 6. To add custom fonts to your polybar:
-⋅⋅* Place a folder with .otf-s and/or .ttf-s in ```/usr/share/fonts/``` directory
-⋅⋅* Then place a string like this to your polybar config
+* Place a folder with .otf-s and/or .ttf-s in ```/usr/share/fonts/``` directory
+* Then place a string like this to your polybar config
 ```bash
 font-1 = FontAwesome5Free:style=Solid:pixelsize=11:antialias=true;1
 ```
@@ -60,7 +60,7 @@ ranger --copy-config=all
 * ```commands.py``` contains various functions' implementation, written in Python, used to modify ranger's behavior
 * ```rc.conf``` is used for setting various options and binding the keys to functions
 * ```rifle.conf``` decides which program to use for opening which file
-* ```scope.sh``` is a shell script used to generate the previews for various file types
+* ```scope.sh``` is a shell script used to generate the previews for various file types\
 [More useful information about ranger](https://wiki.archlinux.org/index.php/ranger)\
 [Official User Guide](https://github.com/ranger/ranger/wiki/Official-user-guide)
 
