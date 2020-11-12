@@ -3,31 +3,32 @@
 #define C_foreground    #ffffff
 
 #define C_red0          #ed0e0e
-#define C_yellow0       #fabd2f
-#define C_green0        #b8bb26
-#define C_cyan0         #8ec07c
+#define C_yellow0       #ffff00
+#define C_green0        #9acd32
+#define C_cyan0         #7fffd4
 #define C_blue0         #003eb0
-#define C_magenta0      #d3869b
+#define C_magenta0      #800080
 
 
 !* Gruvbox
-#define G_background    #bb303030
-#define G_foreground    #dfdfdf
+#define G_background    #3c3836
+#define G_foreground    #ebdbb2
 
 #define G_white         #fdf4c1
 #define G_red           #cc241d
 #define G_yellow        #d79921
-#define G_green         #98971a
-#define G_cyan          #148280
-#define G_blue          #195fa6
-#define G_magenta       #b16286
-#define G_gray          #303030
-#define G_black         #171717
+#define G_green         #b8bb26
+#define G_cyan          #8ec07c
+#define G_blue          #83a598
+#define G_magenta       #d3869b
+#define G_gray          #5c5c5c
+#define G_black         #282828
+
 
 *.background: G_background
 *.foreground: G_foreground
-*.cursorColor: G_white
-*.fadeColor: G_gray
+*.cursorColor: G_foreground
+*.fadeColor: G_black
 *.fading: 40
 
 ! White
