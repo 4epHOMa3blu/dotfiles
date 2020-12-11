@@ -1,4 +1,6 @@
-# i3
+# .config
+
+## i3
 1. Refresh servers before getting started
 ```bash
 sudo pacman -Syy
@@ -15,7 +17,7 @@ sudo pacman -S xorg xorg-xinit dmenu
 
 [More useful information about i3](https://i3wm.org/docs/userguide.html)
 
-# polybar
+## polybar
 1. Install polybar
 ```bash
 sudo pacman -S polybar
@@ -47,7 +49,7 @@ font-1 = FontAwesome5Free:style=Solid:pixelsize=11:antialias=true;1
 ```
 [More useful information about polybar](https://github.com/polybar/polybar/wiki)
 
-# ranger
+## ranger
 1. Install ranger
 ```bash
 sudo pacman -S ranger
@@ -64,7 +66,7 @@ ranger --copy-config=all
 [More useful information about ranger](https://wiki.archlinux.org/index.php/ranger)\
 [Official User Guide](https://github.com/ranger/ranger/wiki/Official-user-guide)
 
-# alacritty
+## alacritty
 1. Install alacritty
 ```bash
 sudo pacman -S alacritty
@@ -77,8 +79,8 @@ sudo chown username:username .config/alacritty/alacritty.yml
 
 [More useful information about alacritty](https://wiki.archlinux.org/index.php/Alacritty)
 
-# redshift
-1. Install redsshift
+## redshift
+1. Install redshift
 ```bash
 sudo pacman -S redshift
 ```
@@ -93,7 +95,7 @@ redshift &
 
 [More useful information about redshift](https://wiki.archlinux.org/index.php/redshift)
 
-# dunst
+## dunst
 1. Install dunst
 ```bash
 sudo pacman -S dunst
@@ -110,7 +112,7 @@ dunst &
 
 [More useful information about dunst](https://wiki.archlinux.org/index.php/Dunst)
 
-## i3-battery-popup
+### i3-battery-popup
 1. Clone i3-battery-popup package
 ```bash
 git clone https://aur.archlinux.org/i3-battery-popup-git.git
