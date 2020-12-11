@@ -1,8 +1,28 @@
 from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import *
 
-class dcat(ColorScheme):
-    progress_bar_color = yellow
+light_red = 160
+light_orange = 172
+light_yellow = 220
+light_green = 148
+light_cyan = 117
+light_blue = 31
+light_magenta = 133
+light_fg = 230
+light_bg = 236
+
+dark_red = 124
+dark_orange = 130
+dark_yellow = 178
+dark_green = 106
+dark_cyan = 74
+dark_blue = 25
+dark_magenta = 127
+dark_fg = 187
+dark_bg = 235
+
+class LightGruvbox(ColorScheme):
+    progress_bar_color = 108
 
     def use(self, context):
         fg, bg, attr = default_colors
@@ -16,105 +36,106 @@ class dcat(ColorScheme):
             else:
                 attr = normal
             if context.empty or context.error:
-                fg = yellow
-                bg = black
+                fg = light_red
             if context.border:
-                fg = black
+                fg = light_yellow
             if context.image:
-                fg = yellow
+                fg = light_cyan
             if context.video:
-                fg = yellow
+                fg = dark_cyan
             if context.audio:
-                fg = yellow
+                fg = light_orange
             if context.document:
-                fg = black
+                fg = light_green
             if context.container:
                 attr |= bold
-                fg = red
+                fg = dark_yellow
             if context.directory:
-                attr |= normal
-                fg = yellow
+                attr |= bold
+                fg = dark_yellow
             elif context.executable and not \
                     any((context.media, context.container,
                        context.fifo, context.socket)):
-                attr |= bold
-                fg = cyan
+                fg = light_orange
             if context.socket:
-                fg = yellow
+                fg = light_blue
                 attr |= bold
             if context.fifo or context.device:
-                fg = blue
+                fg = light_cyan
                 if context.device:
                     attr |= bold
+                    fg = light_cyan
+
             if context.link:
-                fg = context.good and white or black
+                fg = context.good and 223 or 116
+                bg = 234
             if context.bad:
-                fg = yellow
+                bg = 235
             if context.tag_marker and not context.selected:
                 attr |= bold
-                if fg in (black, white):
-                    fg = yellow
+                if fg in (174, 95):
+                    fg = 248
                 else:
-                    fg = red
+                    fg = 174
             if not context.selected and (context.cut or context.copied):
-                fg = yellow
-                bg = black
+                fg = 108
+                bg = 234
+
             if context.main_column:
                 if context.selected:
                     attr |= bold
                 if context.marked:
                     attr |= bold
-                    fg = black
+                    fg = 223
             if context.badinfo:
                 if attr & reverse:
-                    bg = red
+                    bg = 95
                 else:
-                    fg = white
+                    fg = 95
 
         elif context.in_titlebar:
             attr |= bold
             if context.hostname:
-                fg = context.bad and black or yellow
-                bg = black
+                fg = context.bad and dark_magenta or light_magenta
             elif context.directory:
-                fg = black
+                fg = light_orange
             elif context.tab:
                 if context.good:
-                    fg = red
+                    bg = light_fg
             elif context.link:
-                fg = white
+                fg = light_cyan
 
         elif context.in_statusbar:
             if context.permissions:
                 if context.good:
-                    fg = yellow
-                    bg = black
+                    fg = dark_cyan
                 elif context.bad:
-                    fg = red
+                    fg = dark_magenta
             if context.marked:
                 attr |= bold | reverse
-                fg = black
+                fg = light_fg
             if context.message:
                 if context.bad:
                     attr |= bold
-                    fg = yellow
+                    fg = dark_magenta
             if context.loaded:
-                bg = self.progress_bar_color
+                bg = light_green
             if context.vcsinfo:
-                fg = red
+                fg = dark_cyan
                 attr &= ~bold
             if context.vcscommit:
-                fg = white
+                fg = light_blue
                 attr &= ~bold
 
 
         if context.text:
             if context.highlight:
                 attr |= reverse
+                fg = light_fg
 
         if context.in_taskview:
             if context.title:
-                fg = yellow
+                fg = light_cyan
 
             if context.selected:
                 attr |= reverse
@@ -129,29 +150,29 @@ class dcat(ColorScheme):
         if context.vcsfile and not context.selected:
             attr &= ~bold
             if context.vcsconflict:
-                fg = yellow
+                fg = light_red
             elif context.vcschanged:
-                fg = red
+                fg = light_green
             elif context.vcsunknown:
-                fg = white
+                fg = light_magenta
             elif context.vcsstaged:
-                fg = yellow
+                fg = light_cyan
             elif context.vcssync:
-                fg = black
+                fg = light_cyan
             elif context.vcsignored:
-                fg = default
+                fg = light_fg
 
         elif context.vcsremote and not context.selected:
             attr &= ~bold
             if context.vcssync:
-                fg = yellow
+                fg = light_cyan
             elif context.vcsbehind:
-                fg = white
+                fg = light_magenta
             elif context.vcsahead:
-                fg = red
+                fg = light_cyan
             elif context.vcsdiverged:
-                fg = black
+                fg = light_red
             elif context.vcsunknown:
-                fg = black
+                fg = light_magenta
 
         return fg, bg, attr
