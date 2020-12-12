@@ -155,9 +155,11 @@ userresources=$HOME/.Xresources
 ## .xinitrc
 **Usage:** If no specific client program is given on the command line, xinit will look for a hidden file in the user's home_directory called ```.xinitrc``` to run as a shell script to start up client programs.
 
-1. Add a file named ```.xprofile``` to your **$HOME** directory
+1. Add a file named ```.xinitrc``` to your **$HOME** directory
 
 2. Add settings for your window manager, desctop environment etc. here
+
+[More useful information about .xinitrc](https://wiki.archlinux.org/index.php/Xinit)
 
 ## .zprofile
 **Usage:** ```.zprofile``` is used for environment variables and tools configiration
@@ -165,3 +167,4 @@ userresources=$HOME/.Xresources
 1. Add a file named ```.zprofile``` to your **$HOME** directory
 
 2. Add settings for your ```zsh``` here
+[More useful information about .zprofile](https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout)
