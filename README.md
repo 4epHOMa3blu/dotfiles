@@ -132,6 +132,8 @@ exec --no-startup-id i3-battery-popup -n -L 20 -l 15 -t 60s
 # Dotfiles
 
 ## .Xresources
+**Usage:** ```.Xresources``` can be used to set configuration parameters for X client applications.
+
 1. Add a file named ```.Xresources``` to your **$HOME** directory
 
 2. Make sure that you have this line in your .xinitrc file
@@ -142,8 +144,24 @@ userresources=$HOME/.Xresources
 [More useful information about .Xresources](https://wiki.debian.org/Xresources)
 
 ## .xprofile
+**Usage:** ```.xprofile``` allows you to execute commands at the beginning of the X user session - before the window manager is started.
+
 1. Add a file named ```.xprofile``` to your **$HOME** directory
 
 2. Don't forget to put a **&** sign at the end of each command line
 
 [More useful information about .xprofile](https://wiki.archlinux.org/index.php/Xprofile)
+
+## .xinitrc
+**Usage:** If no specific client program is given on the command line, xinit will look for a hidden file in the user's home_directory called ```.xinitrc``` to run as a shell script to start up client programs.
+
+1. Add a file named ```.xprofile``` to your **$HOME** directory
+
+2. Add settings for your window manager, desctop environment etc. here
+
+## .zprofile
+**Usage:** ```.zprofile``` is used for environment variables and tools configiration
+
+1. Add a file named ```.zprofile``` to your **$HOME** directory
+
+2. Add settings for your ```zsh``` here
